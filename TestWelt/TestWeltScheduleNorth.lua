@@ -5,14 +5,14 @@ northSchedules =
     entries={
            
         {
-            instructions={
+            instruction={
                 data={
                     include_previous_station=false,
                     train_line = {
                         -1632728337,
                         -1067694710,
                         -1563614300,
-                        -171209346
+                        171209346
                     },
                     usable=true
                 },
@@ -26,7 +26,7 @@ northSchedules =
                     {data={time_unit=1,value=20},id="create:delay"}
                 }
             },
-            instructions = {
+            instruction = {
                 data={text="Spawn 1"},
                 id="create:destination"
             }
@@ -38,7 +38,7 @@ northSchedules =
                     {data={time_unit=1,value=10},id="create:delay"}
                 }
             },
-            instructions = {
+            instruction = {
                 data={text="Zwischenstop North 1"},
                 id="create:destination"
             }
@@ -50,7 +50,7 @@ northSchedules =
                     {data={time_unit=1,value=5},id="create:delay"}
                 }
             },
-            instructions = {
+            instruction = {
                 data={text="Endstation North"},
                 id="create:destination"
             }
