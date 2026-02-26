@@ -16,7 +16,7 @@ northSchedules =
                     },
                     usable=true
                 },
-                id="createrailwaysnavigator:travel_selection"
+                id="createrailwaysnavigator:travel_section"
             }
         },
            
