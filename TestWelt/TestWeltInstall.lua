@@ -1,0 +1,2 @@
+shell.run("wget https://raw.githubusercontent.com/Preiselkirsche/CC-Tweaked-My-Programms/refs/heads/main/TestWelt/TestWeltMain.lua")
+shell.run("wget https://raw.githubusercontent.com/Preiselkirsche/CC-Tweaked-My-Programms/refs/heads/main/TestWelt/TestWeltScheduleNorth.lua")
