@@ -1,11 +1,12 @@
 -- ====================================
--- EINSTELLUNGEN
+-- SETTINGS
 -- ====================================
 
-local LIMIT = 10000
+local OPEN_LIMIT = 10000
+local CLOSE_LIMIT = 8000
 local INTERVAL = 2
 local OUTPUT_SIDE = "back"
-local PULSE_TIME = 0.2   -- Dauer des Impulses
+local PULSE_TIME = 0.2
 
 local tankColors = {
     colors.white,
@@ -25,26 +26,26 @@ local tankColors = {
 }
 
 -- ====================================
--- TANKS FINDEN
+-- FIND TANKS
 -- ====================================
 
 local tanks = { peripheral.find("createdieselgenerators:distillation_tank_block_entity") }
 
 if #tanks == 0 then
-    print("Keine Tanks gefunden!")
+    print("No tanks found")
     return
 end
 
-print(#tanks .. " Tanks gefunden.")
+print(#tanks .. " tanks found")
 
--- Speichert ob Valve aktuell offen ist
+-- save valve state
 local valveState = {}
 for i = 1, #tanks do
     valveState[i] = false
 end
 
 -- ====================================
--- IMPULS FUNKTION
+-- PULSE FUNCTION
 -- ====================================
 
 local function pulse(color)
@@ -54,7 +55,7 @@ local function pulse(color)
 end
 
 -- ====================================
--- HAUPTSCHLEIFE
+-- MAIN LOOP
 -- ====================================
 
 while true do
@@ -68,17 +69,17 @@ while true do
             amount = data[1].amount or 0
         end
         
-        -- Tank über Limit -> öffnen falls noch geschlossen
-        if amount > LIMIT and not valveState[i] then
+        -- open valve
+        if amount >= OPEN_LIMIT and not valveState[i] then
             pulse(tankColors[i])
             valveState[i] = true
-            print("Tank "..i.." -> Öffnungsimpuls")
+            print("Tank "..i.." OPEN ("..amount.." mB)")
         
-        -- Tank unter Limit -> schließen falls offen
-        elseif amount <= LIMIT and valveState[i] then
+        -- close valve
+        elseif amount <= CLOSE_LIMIT and valveState[i] then
             pulse(tankColors[i])
             valveState[i] = false
-            print("Tank "..i.." -> Schließimpuls")
+            print("Tank "..i.." CLOSE ("..amount.." mB)")
         end
         
     end
