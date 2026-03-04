@@ -8,7 +8,7 @@ northSchedules =
             instruction={
                 data={
                     include_previous_station=false,
-                    train_line = {
+                    train_line = integer{
                         -1632728337,
                         -1067694710,
                         -1563614300,
@@ -19,6 +19,7 @@ northSchedules =
                 id="createrailwaysnavigator:travel_section"
             }
         },
+
            
         {
             conditions = {
