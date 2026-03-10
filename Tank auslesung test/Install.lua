@@ -1,0 +1,2 @@
+shell.run("wget https://raw.githubusercontent.com/Preiselkirsche/CC-Tweaked-My-Programms/refs/heads/main/Tank%20auslesung%20test/einrichten.lua")
+shell.run("wget https://raw.githubusercontent.com/Preiselkirsche/CC-Tweaked-My-Programms/refs/heads/main/Tank%20auslesung%20test/startup.lua")
