@@ -2,8 +2,8 @@
 -- SETTINGS
 -- ====================================
 
-local OUTPUT_SIDE = "back"
-local PULSE_TIME = 0.4
+local OUTPUT_SIDE = "left"
+local PULSE_TIME = 1
 
 local colorsList = {
     colors.white,

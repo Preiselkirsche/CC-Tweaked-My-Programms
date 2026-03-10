@@ -5,8 +5,8 @@
 local OPEN_LIMIT = 10000
 local CLOSE_LIMIT = 8000
 local INTERVAL = 2
-local OUTPUT_SIDE = "back"
-local PULSE_TIME = 0.2
+local OUTPUT_SIDE = "left"
+local PULSE_TIME = 1
 
 local tankColors = {
     colors.white,
